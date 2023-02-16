@@ -1,14 +1,15 @@
 FROM openjdk:8-jre
 
-RUN wget http://downloads.gtnewhorizons.com/ServerPacks/GTNewHorizonsServer-1.7.10-2.1.0.0.zip
+ARG modpackurl=http://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.2.0.0_SERVER.zip
 
-RUN unzip GTNewHorizonsServer-1.7.10-2.1.0.0.zip -d /app
+RUN wget ${modpackurl}
 
-WORKDIR /app
+RUN unzip $(basename ${modpackurl}) -d /data
 
-VOLUME /app/config
-VOLUME /app/server.properties
+WORKDIR /data
+RUN chmod +x startserver.sh
+RUN sed -i 's;false;true;' eula.txt
 
 EXPOSE 25565/tcp
 
-CMD ['startserver.sh']
+CMD ["sh", "startserver.sh"]
