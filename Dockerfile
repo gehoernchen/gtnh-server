@@ -1,4 +1,4 @@
-FROM openjdk:20-jre
+FROM ubuntu/jre:17-22.04_edge
 
 ARG modpackurl=http://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.4.0_Server_Java_17-20.zip
 
