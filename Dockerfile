@@ -7,9 +7,9 @@ RUN wget ${modpackurl}
 RUN unzip $(basename ${modpackurl}) -d /data
 
 WORKDIR /data
-RUN chmod +x startserver.sh
+RUN chmod +x startserver-9.sh
 RUN sed -i 's;false;true;' eula.txt
 
 EXPOSE 25565/tcp
 
-CMD ["sh", "startserver.sh"]
+CMD ["sh", "startserver-9.sh"]
