@@ -1,6 +1,6 @@
 FROM bellsoft/liberica-runtime-container:jdk-all-17-slim-glibc
 
-ARG modpackurl=http://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_${version}_Server_Java_17-20.zip
+ARG modpackurl=http://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.4.0_Server_Java_17-20.zip
 
 RUN wget ${modpackurl}
 
