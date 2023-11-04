@@ -7,7 +7,7 @@ RUN wget ${modpackurl}
 RUN unzip $(basename ${modpackurl}) -d /data
 
 WORKDIR /data
-RUN chmod +x startserver.sh
+RUN chmod +x startserver-java9.sh
 RUN sed -i 's;false;${EULA};' eula.txt
 
 EXPOSE 25565/tcp
