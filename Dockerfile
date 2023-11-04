@@ -12,4 +12,4 @@ RUN sed -i 's;false;${EULA};' eula.txt
 
 EXPOSE 25565/tcp
 
-CMD ["sh", "startserver.sh"]
+CMD ["java", "-Xms6G", "-Xmx6G", "-Dfml.readTimeout=180", "@java9args.txt", "nogui"]
